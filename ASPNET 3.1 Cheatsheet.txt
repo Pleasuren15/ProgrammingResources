@@ -1,0 +1,66 @@
+﻿===================================================================
+STUDY UNIT 1 - 4
+===================================================================
+
+1.	services.AddControllersWithViews();
+
+2.
+
+      if (env.IsDevelopment())
+     	{
+         	app.UseDeveloperExceptionPage();
+     	}
+    	app.UseStaticFiles();
+	app.UseRouting();
+
+ 	app.UseEndpoints(endpoints =>
+	{
+          	endpoints.MapControllerRoute(
+                    name: "default",
+                    pattern: "{controller=Home}/{action=Index}/{id?}");
+       });
+
+3.
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <link rel="stylesheet" asp-href-include="/lib/bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" asp-href-include="/styles/custom.css" />
+
+</head>
+<body>
+    <div class="container">
+        @RenderBody()
+    </div>
+
+    <script asp-src-include="/lib/jquery/jquery.slim.min.js"></script>
+    <script asp-src-include="/lib/popper.js/popper.min.js"></script>
+    <script asp-src-include="/lib/bootstrap/js/bootstrap.min.js"></script>
+</body>
+</html>
+
+4.
+
+{
+  "ConnectionStrings": {
+    "DefaultConnection": "Server=(localdb)\\MSSQLLocalDB;Database=NameDB;Trusted_Connection=True;MultipleActiveResultSets=true"
+  },
+
+            services.AddDbContext<AppDbContext>(options
+                 => options.UseSqlServer(configuration.GetConnectionString("DefaultConnection")));
+
+            services.AddIdentity<IdentityUser, IdentityRole>()
+                .AddEntityFrameworkStores<AppDbContext>()
+                .AddDefaultTokenProviders();
+
+
+5. @addTagHelper Convertor.Infrastructure.*, Convertor
+
+===================================================================
+STUDY UNIT 4 - ADMINISTRATION
+===================================================================
+
+6
