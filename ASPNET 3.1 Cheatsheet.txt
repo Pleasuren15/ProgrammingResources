@@ -63,4 +63,7 @@ STUDY UNIT 1 - 4
 STUDY UNIT 4 - ADMINISTRATION
 ===================================================================
 
-6
+6    public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>
+            WebHost.CreateDefaultBuilder(args)
+            .UseStartup<Startup>()
+            .UseDefaultServiceProvider(options => options.ValidateScopes = 	false);
