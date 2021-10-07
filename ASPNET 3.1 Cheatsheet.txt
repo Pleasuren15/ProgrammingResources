@@ -20,28 +20,6 @@ STUDY UNIT 1 - 4
                     pattern: "{controller=Home}/{action=Index}/{id?}");
        });
 
-3.
-
-<!DOCTYPE html>
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title>@ViewBag.Title</title>
-    <link rel="stylesheet" asp-href-include="/lib/bootstrap/css/bootstrap.min.css" />
-    <link rel="stylesheet" asp-href-include="/styles/custom.css" />
-
-</head>
-<body>
-    <div class="container">
-        @RenderBody()
-    </div>
-
-    <script asp-src-include="/lib/jquery/jquery.slim.min.js"></script>
-    <script asp-src-include="/lib/popper.js/popper.min.js"></script>
-    <script asp-src-include="/lib/bootstrap/js/bootstrap.min.js"></script>
-</body>
-</html>
-
 4.
 
 {

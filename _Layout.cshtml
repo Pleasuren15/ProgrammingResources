@@ -1,0 +1,21 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <link rel="stylesheet" asp-href-include="/lib/bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" asp-href-include="/styles/custom1.css" />
+    <link rel="stylesheet" asp-href-include="/lib/font-awesome/css/all.css" />
+
+</head>
+<body>
+
+    <div>
+        @RenderBody()
+    </div>
+
+    <script asp-src-include="/lib/jquery/jquery.slim.min.js"></script>
+    <script asp-src-include="/lib/popper.js/popper.min.js"></script>
+    <script asp-src-include="/lib/bootstrap/js/bootstrap.min.js"></script>
+</body>
+</html>

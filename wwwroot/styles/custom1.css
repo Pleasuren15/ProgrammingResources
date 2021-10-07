@@ -1,0 +1,141 @@
+﻿@import url('https://fonts.googleapis.com/css2?family=Anton&family=Quicksand&display=swap');
+
+:root {
+    --my-red: #dc3545;
+    --my-white: #fff;
+}
+::selection{
+    background:var(--my-red);
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Quicksand', sans-serif;
+}
+
+.navbar-brand img {
+    width: 65px;
+    height: 65px;
+}
+
+.nav-link {
+    color: var(--my-white);
+    position: relative;
+    padding-bottom: 4px;
+}
+    .nav-link:hover {
+        color: var(--my-white);
+    }
+
+    .nav-link::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        min-width: 10px;
+        height: 3px;
+        background-color: var(--my-white);
+        visibility: hidden;
+    }
+
+    .nav-link:hover::before {
+        color: var(--my-white);
+        visibility: visible;
+    }
+
+.carousel, .carousel-img {
+    height: 75vh;
+}
+
+.carousel-caption{
+    animation : slideUp 1s;
+    text-align:left;
+}
+
+.carousel-caption h2 {
+    font-family: 'Anton', sans-serif;
+}
+
+.carousel-caption a {
+    border: 2px solid var(--my-white);
+    color: var(--my-white);
+    border-radius: 7px;
+    padding: 0.5rem 2rem;
+    text-decoration: none;
+    transition: 0.5s;
+}
+
+.carousel-caption a:hover{
+    background-color: var(--my-red);
+}
+
+.footer{
+    padding: 1.5rem;
+}
+
+.footer-circle{
+    border: 2px solid var(--my-white);
+    width : 8vh;
+    height : 8vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    border-radius: 50%;
+    margin : 7px;
+}
+
+.site-honours, .site-bayern-info, .site-matches {
+    padding: 2rem 0 0 0;
+}
+
+.site-honours h3, .site-bayern-info h3 {
+    font-family: 'Anton', sans-serif;
+    letter-spacing: 3px;
+    color:#404040;
+}
+
+.site-bayern-info-items{
+    display:grid;
+    grid-template-columns:repeat(4 , 1fr);
+}
+
+
+
+.site-honours-trophies{
+    display:grid;
+    grid-template-columns:repeat(6,1fr);
+}
+
+.site-matches {
+    display:grid;
+    grid-template-columns : repeat(2 , 1fr);
+    border: 6px solid var(--my-red);
+    margin-top: 2rem;
+    padding:1.3rem 1.5rem;
+    grid-gap:1rem;
+}
+
+.site-matches-first-div{
+    border-right: 4px solid var(--my-red);
+    padding-right : 1.5rem;
+}
+
+.site-matches img{
+    width: 45px;
+    height:45px;
+}
+
+
+@keyframes slideUp {
+    from {
+        transform: translateY(-300%);
+    }
+
+    to {
+    }
+}
