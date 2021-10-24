@@ -1,0 +1,72 @@
+        REPOSITORY BASE
+	========================================================================
+	void Create(T entity);
+        void Delete(T entity);
+        void Update(T entity);
+        void Save();
+        IQueryable<T> FindByCondition(Expression<Func<T, bool>> expression);
+        IQueryable<T> FindAll();
+        T FindById(int id);
+
+        public AppDbContext _appDbContext { get; set; }
+        public CRepositoryBase(AppDbContext appDbContext)
+        {
+            _appDbContext = appDbContext;
+        }
+
+        public void Create(T entity)
+        {
+            _appDbContext.Set<T>().Add(entity);
+        }
+
+        public void Delete(T entity)
+        {
+            _appDbContext.Set<T>().Remove(entity);
+        }
+
+        public void Update(T entity)
+        {
+            _appDbContext.Set<T>().Update(entity);
+        }
+
+        public void Save()
+        {
+            _appDbContext.SaveChanges();
+        }
+
+        public IEnumerable<T> FindByCondition(Expression<Func<T, bool>> expression)
+        {
+            return _appDbContext.Set<T>().Where(expression);
+        }
+
+        public IEnumerable<T> FindAll()
+        {
+            return _appDbContext.Set<T>();
+        }
+
+        public T FindById(int id)
+        {
+            return _appDbContext.Set<T>().Find(id);
+        }
+	========================================================================
+        REPOSITORY WRAPPER
+	========================================================================
+        CRepositoryCareer repositoryCareer = null;
+        CRepositoryTeamMember repositoryTeamMember = null;
+        CRepositoryCareerApplication repositoryCareerApplication = null;
+
+        public AppDbContext _appDbContext { get; }
+
+        public CRepositoryWrapper(AppDbContext appDbContext)
+        {
+            _appDbContext = appDbContext;
+        }
+        public IRepositoryCareer _repositoryCareer
+        {
+            get
+            {
+                if (repositoryCareer == null)
+                    repositoryCareer = new CRepositoryCareer(_appDbContext);
+                return repositoryCareer;
+            }
+        }
